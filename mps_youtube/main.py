@@ -3982,6 +3982,59 @@ def main():
     arg_inp = arg_inp.replace(r",,", "[mpsyt-comma]")
     arg_inp = arg_inp.split(",")
 
+    # commands to download all of the videos
+    fakeInputStack = []
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20") # 5
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20") #10
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20") #15
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20") #20
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20")
+    fakeInputStack.append("n")
+    fakeInputStack.append("dv 1-20") #25
+    fakeInputStack.append("n")
+
     while True:
         next_inp = ""
 
@@ -3990,7 +4043,7 @@ def main():
             next_inp = next_inp.replace("[mpsyt-comma]", ",")
 
         try:
-            userinput = next_inp or input(prompt).strip()
+            userinput = next_inp or fakeInputStack.pop() #next_inp or input(prompt).strip()
 
         except (KeyboardInterrupt, EOFError):
             userinput = prompt_for_exit()
@@ -4012,3 +4065,9 @@ def main():
                 sys.exit("Bad syntax")
 
         screen_update()
+
+        HOURS_PER_DAY = 24
+        MINUTES_PER_HOUR = 60
+        oneHourInSeconds = HOURS_PER_DAY*MINUTES_PER_HOUR
+
+        time.sleep(10)
